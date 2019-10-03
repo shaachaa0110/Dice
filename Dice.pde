@@ -1,10 +1,13 @@
+Die harry;
 void setup()
 {
 	noLoop();
+	harry = new Die(100, 100);
 }
 void draw()
 {
-	//your code here
+	background(0);
+	harry.show();
 }
 void mousePressed()
 {
@@ -16,7 +19,8 @@ class Die //models one single dice cube
 	
 	Die(int x, int y) //constructor
 	{
-		//variable initializations here
+		int xPosition = x;
+		int yPosition = y;
 	}
 	void roll()
 	{
@@ -24,6 +28,6 @@ class Die //models one single dice cube
 	}
 	void show()
 	{
-		//your code here
+		rect(xPosition, yPosition, 100, 100);
 	}
 }
