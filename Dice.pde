@@ -5,10 +5,13 @@ void setup()
 }
 void draw()
 {
-	for(int i = 0; i < 3; i++){
-		for(int j = 0; j < 3; j++){
-			Die harry = new Die(200, 200);
+	background(0);
+	fill(255);
+	for(int j = 0; j < 400; j+=50){
+		for(int i = 0; i < 500; i+=30){
+			Die harry = new Die(i, j);
 			harry.show();
+			//System.out.println(harry.yPosition);
 		}
 	}
 }
@@ -21,15 +24,17 @@ class Die //models one single dice cube
 	//variable declarations here
 	int xPosition;
 	int yPosition;
-	int rectSize = 100;
-	//this may need to be put somewhere else so that it changes each time
-	int rollValue = (int)(Math.random()*6)+1;
-	int dotSize = rectSize/7;
+	int rectSize;
+	int rollValue;
+	int dotSize;
 
 	Die(int x, int y) //constructor
 	{
 		xPosition = x;
 		yPosition = y;
+		rectSize = 30;
+		rollValue = (int)(Math.random()*6)+1;
+		dotSize = rectSize/7;
 	}
 	void roll()
 	{
@@ -37,7 +42,9 @@ class Die //models one single dice cube
 	}
 	void show()
 	{
+		fill(255);
 		rect(xPosition, yPosition, rectSize, rectSize);
+		System.out.println(xPosition+", "+yPosition+", "+rectSize+", "+rectSize);
 		fill(0);
 		if(rollValue <= 1){
 			ellipse(xPosition + rectSize/2, yPosition + rectSize/2, dotSize, dotSize); 
