@@ -1,3 +1,4 @@
+int counter = 0;
 void setup()
 {
 	size(500, 500);
@@ -12,8 +13,12 @@ void draw()
 			Die harry = new Die(i, j);
 			harry.show();
 			//System.out.println(harry.yPosition);
+			counter = counter + harry.rollValue;
 		}
 	}
+	fill(50);
+	textSize(50);
+	text("Score = " + counter, 100, 450);
 }
 void mousePressed()
 {
