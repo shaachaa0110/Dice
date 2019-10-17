@@ -12,7 +12,6 @@ void draw()
 		for(int i = 0; i < 500; i+=30){
 			Die harry = new Die(i, j);
 			harry.show();
-			//System.out.println(harry.yPosition);
 			counter = counter + harry.rollValue;
 		}
 	}
@@ -41,15 +40,10 @@ class Die //models one single dice cube
 		rollValue = (int)(Math.random()*6)+1;
 		dotSize = rectSize/7;
 	}
-	void roll()
-	{
-		//your code here
-	}
 	void show()
 	{
 		fill(255);
 		rect(xPosition, yPosition, rectSize, rectSize);
-		System.out.println(xPosition+", "+yPosition+", "+rectSize+", "+rectSize);
 		fill(0);
 		if(rollValue <= 1){
 			ellipse(xPosition + rectSize/2, yPosition + rectSize/2, dotSize, dotSize); 
